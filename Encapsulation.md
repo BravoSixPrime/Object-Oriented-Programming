@@ -29,5 +29,5 @@ int getAge(){
     return Age;
 }
 ```
-Now we have 3 setter and 6 getters to interact with object properties.
+Now we have 3 setters and 3 getters to interact with object properties.
 
