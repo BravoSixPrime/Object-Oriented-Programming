@@ -52,6 +52,9 @@ public:
         else
             cout<<"No promotion for you "<<Name;
     }
+    virtual void Work(){
+        cout<<Name<<" is checking email,performing tasks......."<<endl;
+    }
 
 };
 class Developer : public Employee { //Developer => Child Class     Employee => Parent class
@@ -67,6 +70,9 @@ public:
     void FixBug(){
         cout<<Name<<" Fix bug using "<<ProgrammingLang;
     }
+    void Work(){
+        cout<<Name<<" is coding !"<<endl;
+    }
 };
 class Teacher : public Employee{
 public:
@@ -79,13 +85,18 @@ public:
     void PrepareLesson(){
         cout<<Name<<" is preapring lessons for "<<Subject;
     }
+    void Work(){
+        cout<<Name<<" is teaching !"<<endl;
+    }
 };
 
 int main(){
     Developer d = Developer("Jay","Google",21,"cpp");
-    d.FixBug();
-    d.AskForPromotion();
     Teacher t = Teacher("Gary","Hogwarts",35,"Magic");
-    t.AskForPromotion();
+
+    Employee *e1 = &d; //*e1 => Employee class pointer references 'Developer' Object
+    Employee *e2 = &t; //*e2 => Employee class pointer references 'Teacher' Object
     
+    e1->Work();
+    e2->Work();
 }
